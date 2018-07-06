@@ -1,14 +1,15 @@
 import React from 'react';
+import './NavBar.css';
 
 const NavBar = () => {
 
     return (
-        <nav>
-            <div>
-                <a href='/' >PlanIt</a>
-            </div>
-            <div>
-                <ul>
+        <div>
+            <nav >
+                <ul className='clearfix' >
+                    <li>
+                        <a href='/' >PlanIt</a>
+                    </li>
                     <li>
                         <a href='/' >Home</a>
                     </li>
@@ -19,8 +20,8 @@ const NavBar = () => {
                         <a href='/sign-up' >Sign Up</a>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     );
 }
 
