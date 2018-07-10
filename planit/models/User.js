@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
   name: { 
     type: String 
   },
-  oganization: { 
+  organization: { 
     type: String
   },
   isAdmin: {

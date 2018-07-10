@@ -46,11 +46,11 @@ class PlanCard extends Component {
     getUserPlans = () => {
         //API call to get all plans associated with logged in user
         //set these to state.....somehow and render them on the page for each element found
-        // API.getPlans()
-        // .then(plans => this.setState({
-        //     plans: plans
-        // }))
-        // .catch(err => console.log(err))
+        API.getAllUserPlans()
+        .then(plans => this.setState({
+            plans: plans
+        }))
+        .catch(err => console.log(err))
     }
 
     loadPlan = id => {

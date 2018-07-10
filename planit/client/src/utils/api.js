@@ -18,7 +18,5 @@ postPlan: function(GearData){
 //     return axios.put("/api/planit" + id)
     
 // },
-
-
     
 }
