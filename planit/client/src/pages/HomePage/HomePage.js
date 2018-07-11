@@ -1,14 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import styled from 'styled-components';
-import defaultImage from '../../img/defaultPlanImages/4.jpg';
-import addFeature from '../../img/homepage-plus-sign.png';
-import manageFeature from '../../img/travel-organizer.jpg';
-import checklistFeature from '../../img/checklist.png';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 
 
 const Container = styled.div`
