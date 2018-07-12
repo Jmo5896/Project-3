@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 // import styled from 'styled-components';
 import './Dashboard.css';
@@ -32,6 +33,18 @@ class HomePage extends Component {
                 location: 'Costa Rica',
                 date: '8/08/18',
                 _id: '239875498798df'
+            },
+            plan3: {
+                title: 'Graduation Vacation',
+                location: 'Green Mountain Reservoir',
+                date: '7/13/18',
+                _id: 'dabombdiggity'
+            },
+            plan4: {
+                title: 'Rocky Mountain National Adventure',
+                location: 'Fern lake, CO',
+                date: '7/20/18',
+                _id: 'cutthroatgalore'
             }
         },
         plansArray: [],
@@ -77,54 +90,65 @@ class HomePage extends Component {
 
         console.log('clicked ' + id)
 
-        API.getPlanByID(id)
-        .then(plan => {
-            console.log('hit the .then')
-            this.setState({
-            clickedPlan: plan,
+        return this.setState({
             loadPlan: true
-            })
-            if( this.state.loadPlan ) {
-                <Redirect to={'/planit/' + plan._id}  />
-            }
         })
-        //add another .then to load the plan page with the specific cleckedPlan planID
-        .catch(err => console.log(err))
+
+
+        // API.getPlanByID(id)
+        // .then(plan => {
+        //     console.log('hit the .then')
+        //     this.setState({
+        //     clickedPlan: plan,
+        //     loadPlan: true
+        //     })
+        //     if( this.state.loadPlan ) {
+        //         <Link to={"/planit/" + plan.id} />
+        //     }
+        // })
+        // //add another .then to load the plan page with the specific cleckedPlan planID
+        // .catch(err => console.log(err))
 
     }
-//kasjdhfkjah
+
+    renderRedirect = () => {
+        if (this.state.loadPlan) {
+            <Redirect to='/planit/test'  />        
+        }
+    }
+
     getUserPlans = () => {
 
-        const plans = this.state.plans
+        let testArray = []
 
-        // for( let onePlan in plans ) {
+        for( let onePlan in this.state.plans ) {
 
-        //     console.log(plans[onePlan])
+            testArray.push(<PlanCard title={this.state.plans[onePlan].title} location={this.state.plans[onePlan].location} id={this.state.plans[onePlan]._id} date={this.state.plans[onePlan].date} clicked={this.loadPlan} />)
 
-        // }
+        }
 
-        API.getAllUserPlans('Walker')
-        .then(plans => {
+        return testArray
 
-            for( let onePlan in plans ) {
+    //     API.getAllUserPlans('Walker')
+    //     .then(plans => {
 
-                console.log(plans[onePlan])
+    //         for( let onePlan in plans ) {
 
-            }
+    //             console.log(plans[onePlan])
 
-            this.setState({
-            plans: plans
-        })
-    })
-        .catch(err => console.log(err))
+    //         }
+
+    //         this.setState({
+    //         plans: plans
+    //     })
+    // })
+    //     .catch(err => console.log(err))
         
     }
 
     render () {
 
         //<PlanCard title={plan.title} location={plan.location} id={plan._id} date={plan.date} clicked={this.loadPlan} />
-
-
         
         return (
             <div className='container clearfix'>
@@ -137,7 +161,7 @@ class HomePage extends Component {
                     </div>
                 </div>
                 <div className='cardPanel'>
-                    
+                    {this.getUserPlans()}
                 </div>
             </div>
         );
