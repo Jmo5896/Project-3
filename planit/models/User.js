@@ -18,15 +18,10 @@ var UserSchema = new mongoose.Schema({
   name: { 
     type: String 
   },
-  oganization: { 
-    type: String
-  },
-  isAdmin: {
-    type: Boolean, default: false
-  },
-  isOwner: {
-    type: Boolean, default: false
-  },
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: "Comment"
+  }]
 
 
 });

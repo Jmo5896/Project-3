@@ -11,6 +11,27 @@ import LoginForm from './components/login-form'
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 
+const AppContext = React.createContext()
+
+class AppProvider extends Component {
+
+  state = {
+    currentLoggedInUser: '',
+    // setCurrent: () => {
+    //   this.setState({ currentLoggedInUser: response.data.username})
+    // }
+  }
+
+  render() {
+
+      return (
+        <AppContext.Provider value={this.state}>
+          {this.props.children}
+        </AppContext.Provider>
+      )
+    }
+}
+
 class App extends Component {
   constructor() {
     super()
@@ -62,9 +83,9 @@ class App extends Component {
               <p>Join the party, {this.state.username}!</p>
             }
           <Switch>
-            <Route exact path='/' component={HomePage}/>
+            <Route exact path='/' component={HomePage}/> 
             <Route exact path='/dashboard' component={Dashboard}/>
-            <Route exact path='/plan' component={PlanPage} />
+            <Route exact path='/planit/:id' component={PlanPage} />
             <Route path="/login" render={() =>
             <LoginForm
               updateUser={this.updateUser}

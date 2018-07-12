@@ -1,14 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import defaultImage from '../../img/defaultPlanImages/4.jpg';
-import addFeature from '../../img/homepage-plus-sign.png';
-import manageFeature from '../../img/travel-organizer.jpg';
-import checklistFeature from '../../img/checklist.png';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import addFeature from '../../img/red.png';
+import manageFeature from '../../img/fairy.png';
+import checklistFeature from '../../img/gold.png';
 
 
 const Container = styled.div`
@@ -52,11 +47,31 @@ const InfoDiv = styled.div`
 
 const About = styled.h2`
     text-align: center;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 `;
 
 const Info = styled.p`
+    font-family: 'Work Sans', sans-serif;
+`;
+
+const FeatureDiv = styled.div`
+    display: inline-block;
+    margin-left: 7em;
+    margin-right: auto;
+    margin-bottom: 2em;
+    margin-top: 1em;
+`;
+
+const FeatureImg = styled.img`
+    width: 200px;
+    height: auto;
+`;
+
+const FeatureInfo = styled.p`
+    overflow-wrap: normal;  
+    width: 200px;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 `;
 
 class HomePage extends Component {
@@ -83,32 +98,22 @@ class HomePage extends Component {
                             Join PlanIt today for <b><em>FREE</em></b> and stay organized and accountable!
                         </Info>
                     </InfoDiv>
-                    <Grid container>
-                        <Grid item s >
-                            <Card>
-                            <CardMedia src={addFeature} alt='Feature display to add a plan' />
-                            <CardContent>
-                                <Typography component="p">Add a planned event to help you and your friends get on the same page.</Typography>
-                            </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item s>
-                            <Card>
-                                <CardMedia src={addFeature} alt='Feature display to add a plan' />
-                                <CardContent>
-                                    <Typography component="p">Manage plan information such as dates, descriptions, who's coming, and checklists for what to bring.</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item s>
-                            <Card>
-                                <CardMedia src={addFeature} alt='Feature display to add a plan' />
-                                <CardContent>
-                                    <Typography component="p">Create interactive checklists that you and your plan members. Checkoff list items to assign them to your user and specify the quantity you're bringing.</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                    <div>
+                        <FeatureDiv>
+                            <FeatureImg src={manageFeature} alt="Fairy Planet"/>
+                            <FeatureInfo>blah blah blah blah Add a planned event to help you and your friends get on the same page</FeatureInfo>
+                        </FeatureDiv>
+                        <FeatureDiv>
+                            <FeatureImg src={addFeature} alt="Red Planet"/>
+                            <FeatureInfo>Manage plan information such as dates, descriptions, who's coming, and checklists for what to bring</FeatureInfo>
+                        </FeatureDiv>
+                        
+                        <FeatureDiv>
+                            <FeatureImg src={checklistFeature} alt="Gold Planet"/>
+                            <FeatureInfo>Checkoff list items to assign them to your user and specify the quantity you're bringing</FeatureInfo>
+                        </FeatureDiv>
+                    </div>
+
                 </Container>
             </Fragment>
         );

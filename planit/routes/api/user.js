@@ -4,7 +4,7 @@ const User = require('../../models/User');
 const UserSession = require('../../models/UserSession');
 const passport = require('../../passport')
 
-router.post('/', (req, res) => {
+router.post('/signup', (req, res) => {
     console.log('user signup');
 
     const { username, password } = req.body

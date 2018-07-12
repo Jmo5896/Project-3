@@ -8,14 +8,14 @@ const Button = styled.button`
     background-color: transparent;
     border: 2px solid #2b6aaf;
     border-radius: 4px;    
+    font-size: 1rem;
     font-family: 'Work Sans', sans-serif;
     color: #2b6aaf;
-    margin: auto;
 
-    /* &:hover {
+    &:hover {
         color: #ffffff;
         background-color: #2b6aaf;
-    } */
+    } 
     
 `;
 

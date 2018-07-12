@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require('express-session');
 const morgan = require('morgan');
-const router = require("./routes/api/");
+const router = require("./routes/api");
 const passport = require('./passport');
 var MongoStore = require('connect-mongo')(session);
 const app = express();
@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 //   app.use(express.static("client/build"));
 // }
 // Add routes, both API and view
-app.use(router);
+app.use("/api", router);
 
 // Connect to the Mongo DB
 mongoose.connect((process.env.MONGODB_URI || "mongodb://localhost:27017/planitdb"), { useNewUrlParser: true });
@@ -38,7 +38,8 @@ mongoose.connect((process.env.MONGODB_URI || "mongodb://localhost:27017/planitdb
 app.use(passport.initialize())
 app.use(passport.session()) // calls the deserializeUser
 
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // Start the API server
 app.listen(PORT, function() {
@@ -47,5 +48,4 @@ app.listen(PORT, function() {
 
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+

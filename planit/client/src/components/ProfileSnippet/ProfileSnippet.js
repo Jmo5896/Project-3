@@ -34,25 +34,23 @@ const ProfileInfo = styled.p`
     font-family: 'Roboto', sans-serif;
 `;
 
-class ProfileSnippet extends Component {
+const ProfileSnippet = props => {
 
-    render () {
-        return (
-            <Fragment>
-                <ProfileDiv>
-                    <ProfilePicDiv>
-                        <ProfilePic src={profile_img} alt='Profile Picture'>
-                        </ProfilePic>
-                    </ProfilePicDiv>
-                
-                    <ProfileInfoDiv>
-                        <ProfileName>Walker Radez</ProfileName>
-                        <ProfileInfo>walkerradez@gmail.com</ProfileInfo>
-                    </ProfileInfoDiv>
-                </ProfileDiv>
-            </Fragment>
-        );  
-    } 
+    return (
+        <Fragment>
+            <ProfileDiv>
+                <ProfilePicDiv>
+                    <ProfilePic src={profile_img} alt='Profile Picture'>
+                    </ProfilePic>
+                </ProfilePicDiv>
+
+                <ProfileInfoDiv>
+                    <ProfileName>{props.profile.name}</ProfileName>
+                    <ProfileInfo>{props.profile.email}</ProfileInfo>
+                </ProfileInfoDiv>
+            </ProfileDiv>
+        </Fragment>
+    );  
 }
 
 export default ProfileSnippet;

@@ -6,9 +6,12 @@ const ChecklistCardDiv = styled.div`
     float: left;
     text-align: center;
     width: 30%;
-    margin: 16px;
+    margin-left: 24px;
+    margin-right: 8px;
+    margin-top: 16px;
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.1);
     border-radius: 4px;
+    background: #ffffff;
 `;
 
 const ChecklistTitle = styled.h4`

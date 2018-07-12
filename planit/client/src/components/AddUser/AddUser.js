@@ -7,17 +7,45 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import plus from '../../img/plus.png';
+import plus from '../../img/baseline-add_circle_outline-24px.svg';
 import './AddUser.css';
-
+import Button from '../Button';
 
 const PlusImg = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     margin-left: .25em;
     margin-right: .25em;
     margin-bottom: .5em;
+    align-content: left;
+    justify-content: left;
+`;
+
+const AddButton = Button.extend`
+    width: 250px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+`;
+
+const Input = styled.input`
+	padding: .25em;
+	color: black;
+	background: #ffffff;
+	border: none;
+	border-radius: 4px;
+	width: 245px;
+	margin-top: 1em;
+	margin-bottom: .25em;
+	margin-left: 1em;
+	margin-right: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+
+	/* &:hover {
+		border: 1px solid #2b6aaf;
+	} */
 `;
 
 class AddUser extends Component {
@@ -56,11 +84,17 @@ class AddUser extends Component {
                 
                 <div id="myDropdown" className="dropdown-content">
                     <form>
-                        Email:<br />
-                        <input></input>
+                        {/* Enter an email address:<hr /> */}
+                        <Input 
+                            placeholder="Enter Email"
+                            type="email"
+                            name="addemail"
+                            innerRef={x => { this.input = x }}
+                            onMouseEnter={() => this.input.focus()}>
+                        </Input>
                     </form>
                     <br />
-                    <button type='submit' onClick={this.fetchUser}>Add</button>
+                    <AddButton type='submit' onClick={this.fetchUser}>Add Member</AddButton>
                 </div>
             </div>
         )
