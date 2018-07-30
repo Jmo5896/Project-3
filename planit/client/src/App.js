@@ -6,8 +6,8 @@ import HomePage from './pages/HomePage/HomePage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PlanPage from './pages/PlanPage/PlanPage';
 import ErrPage from './pages/ErrPage/ErrPage';
-import Signup from './components/sign-up';
-import LoginForm from './components/login-form'
+import Signup from './components/Signup';
+import LoginForm from './components/LoginForm';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 

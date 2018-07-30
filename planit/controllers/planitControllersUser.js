@@ -1,6 +1,5 @@
 const db = require("../models");
-const bcrypt = require('bcrypt');
-const globalVariable = {};
+// const bcrypt = require('bcryptjs');
 
 
 module.exports = {
@@ -15,7 +14,6 @@ module.exports = {
     },
 
     findAllByUserId: function(req,res){
-        let user = {};
         db.User
         .findById(req.params.id)
         .then(dbPlanit => res.json(dbPlanit))
@@ -23,9 +21,6 @@ module.exports = {
     },
         
     create: function(req,res){
-        bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash(req.body.password, salt, function(err, hash) {
-        req.body.password = hash;
         db.User
         .create(req.body)
         .then(dbPlanit => res.json(dbPlanit))

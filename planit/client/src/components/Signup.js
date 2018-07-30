@@ -83,7 +83,7 @@ class Signup extends Component {
 			  console.log('sign-up handleSubmit, username: ')
 			  console.log(this.state.username)
 			event.preventDefault();
-			axios.post('/', {
+			axios.post('/api/planit/travel/is/fun/with/your/friends/and/family/enjoy/User', {
 			  email: this.state.email,
 			  username: this.state.username,
 			  password: this.state.password
@@ -153,7 +153,7 @@ render() {
 							type="password"
 							name="password"
 							value={this.state.password}
-							onChange={this.handleChange}
+							onChange={this.handleInputChange}
 							// innerRef={x => { this.input = x }}
 							// onMouseEnter={() => this.input.focus()}
 						/>
@@ -162,7 +162,7 @@ render() {
 				<div>
 					<div></div>
 					<FormButton
-						onClick={this.handleSubmit}
+						onClick={this.handleFormSubmit}
 						type="submit"
 					>Sign up
 					</FormButton>

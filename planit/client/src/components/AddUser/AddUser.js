@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import plus from '../../img/baseline-add_circle_outline-24px.svg';
 import './AddUser.css';
 import Button from '../Button';
-
+import API from '../../utils/api';
 const PlusImg = styled.img`
     width: 25px;
     height: 25px;
@@ -66,21 +66,18 @@ class AddUser extends Component {
             //if user exists add to members array for associated plan(PlanIt table)
                 //update associated plans members list with new user
             //else msg, "user does not exist"
-            // API.PUT({
-            //     email:''
-            // })
-            //     .then(res => this.PUT())
-            //     .catch(err => console.log(err));
+            API.getUser({
+                email:''
+            })
+                .then(res => this.put())
+                .catch(err => console.log(err));
         
     };
     render() {
         return (
-            // <a>
-            //     <PlusImg src={plus} onClick={enterMember} alt='Add a member' />
-            // </a>
             <div className="dropdown">
                 
-                    <PlusImg className="dropbtn" src={plus} onClick={this.enterMember} alt='Add a member' />
+                <PlusImg className="dropbtn" src={plus} onClick={this.enterMember} alt='Add a member' />
                 
                 <div id="myDropdown" className="dropdown-content">
                     <form>
