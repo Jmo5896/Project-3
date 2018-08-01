@@ -93,7 +93,7 @@ class HomePage extends Component {
                         <TripImg src={defaultImages.array[Math.ceil(Math.random() * defaultImages.array.length)]} alt='Plan image' />
                         <TripTitle> 
                             {/* needs to be replaced with dynamic title */}
-                            Camping Trip Title 
+                            Graduation Vacation 
                         </TripTitle>
                     </TripImgDiv>
 

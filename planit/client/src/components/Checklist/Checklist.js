@@ -27,7 +27,7 @@ class Checklist extends Component {
             <Fragment>
                 <ChecklistCardDiv>
                     <ChecklistTitle>
-                        Checklist Title
+                        Gear
                     </ChecklistTitle>
                     <hr />
                     <ChecklistLineItem>
@@ -36,7 +36,7 @@ class Checklist extends Component {
 
                 <ChecklistCardDiv>
                     <ChecklistTitle>
-                        Checklist Title
+                        Expendable Goods
                     </ChecklistTitle>
                     <hr />
                     <ChecklistLineItem>
@@ -45,7 +45,7 @@ class Checklist extends Component {
 
                 <ChecklistCardDiv>               
                     <ChecklistTitle>
-                        Checklist Title
+                        Recreational
                     </ChecklistTitle>
                     <hr />
                     <ChecklistLineItem>

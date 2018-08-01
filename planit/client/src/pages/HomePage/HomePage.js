@@ -82,7 +82,7 @@ class HomePage extends Component {
                 <JumbotronDiv>
                     <Jumbotron src={defaultImage} alt="Photo"></Jumbotron>
                     <PlanIt>PlanIt</PlanIt>
-                    <PlanItInfo>write a tagline here...</PlanItInfo>
+                    <PlanItInfo>a collaborative trip planner</PlanItInfo>
                 </JumbotronDiv>
                 <Container >
                     <InfoDiv>
@@ -101,7 +101,7 @@ class HomePage extends Component {
                     <div>
                         <FeatureDiv>
                             <FeatureImg src={manageFeature} alt="Fairy Planet"/>
-                            <FeatureInfo>blah blah blah blah Add a planned event to help you and your friends get on the same page</FeatureInfo>
+                            <FeatureInfo>Add a planned event to help you and your friends get on the same page for upcoming trips</FeatureInfo>
                         </FeatureDiv>
                         <FeatureDiv>
                             <FeatureImg src={addFeature} alt="Red Planet"/>

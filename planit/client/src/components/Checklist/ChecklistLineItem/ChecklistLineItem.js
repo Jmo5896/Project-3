@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import check from '../../../img/baseline-check_circle_outline-24px.svg'
+import plus from '../../../img/baseline-add_circle_outline-24px.svg';
 
 const ItemDiv = styled.div`
     display: inline-flex;
@@ -27,6 +28,17 @@ const ItemIcon = styled.div`
     float: left;
     margin-top: 4px;
     margin-bottom: 4px;
+`;
+
+const PlusIcon = styled.div`
+    content: "";
+    display: table;
+    clear: both;
+    float: left;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 25%;
+    height: 25%;
 `;
 
 const ItemInput = styled.input`
@@ -151,6 +163,16 @@ class ChecklistLineItem extends Component {
                         name="cost"
                         placeholder="Cost"
                     />  
+                </ItemDiv>
+
+                <hr />
+
+                <ItemDiv>
+                    <LineItem>
+                        <PlusIcon>
+                            <img src={plus} alt='plus sign' />
+                        </PlusIcon>
+                    </LineItem>
                 </ItemDiv>
             
                 {/* <HR /> */}

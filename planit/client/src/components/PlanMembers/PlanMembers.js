@@ -6,6 +6,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import memberImg from '../../img/50x50.png';
+import profile_img from '../../img/profile_img.jpg';
 import AddUser from '../AddUser/AddUser';
 
 const MemImg = styled.img`
@@ -35,10 +36,10 @@ const PlanMembers = () => {
     return (
         <Fragment>
             <MemDiv>
-                <MemImg src={memberImg} alt='Group member 1' />
-                <MemImg src={memberImg} alt='Group member 2' />
-                <MemImg src={memberImg} alt='Group member 3' />
-                <MemImg src={memberImg} alt='Group member 4' />
+                <MemImg src={profile_img} alt='Group member 1' />
+                <MemImg src={profile_img} alt='Group member 2' />
+                <MemImg src={profile_img} alt='Group member 3' />
+                <MemImg src={profile_img} alt='Group member 4' />
             <AddUser />
             </MemDiv>
         </Fragment>

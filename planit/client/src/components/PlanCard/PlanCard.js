@@ -34,12 +34,13 @@ const PlanInfo = styled.p`
 
 
 const PlanCard = props => {
+        const planLink = '/planit/' + props.id
 
         return (
             <Fragment>
-                <a href='/planit/test' >
+                <a href={planLink} >
                     <PlanCardDiv value={props.id} id={props.id} onClick={ () => props.clicked(props.id)} >
-                        <PlanImage src={placeholder} alt='Plan Visual' />
+                        <PlanImage src={props.image} alt='Plan Visual' />
                         <PlanTitle>
                             {props.title}
                         </PlanTitle>
